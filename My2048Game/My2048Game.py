@@ -1,14 +1,17 @@
 import msvcrt
 import os
 import random
+       #The real one
 map = [[0,0,0,0],\
        [0,0,0,0],\
        [0,0,0,0],\
        [0,0,0,0]]
+       #useless ? not sure...maybe it is useful...emmm...why did i define this List?
 map1 =[[0,0,0,0],\
        [0,0,0,0],\
        [0,0,0,0],\
        [0,0,0,0]]
+       #临时列表，应该是存放临时地图数据的
 mapcopy =[[0,0,0,0],\
        [0,0,0,0],\
        [0,0,0,0],\
@@ -55,7 +58,7 @@ def printmap():   #打印游戏地图
     for x in range(4):
         print("                       ",end = "      ")
         for y in range(4):
-            for time in range(lenth[x][y]):
+            for time in range(lenth[x][y]): #按照长度来处理空格
                 space[x][y] = space[x][y] + " "
             print(space[x][y] + str(map[x][y]),end="    ")
         print("\n")
@@ -245,7 +248,7 @@ while True:
         print("                 YOU ARE LOSER MOTHERFUCKER   ！！！")
         break
     if key == b'w':
-        moveup()
+        moveup()#每执行一步就要Print一次map以便显示改变后的map
         printmap()
     elif key == b's':
         movedown()
